@@ -8,7 +8,7 @@
  */
 int is_printable(char c)
 {
-	return (c >= 32 && c < 127);
+    return (c >= 32 && c < 127);
 }
 
 /**
@@ -21,18 +21,18 @@ int is_printable(char c)
  */
 int append_hexa_code(char ascii_code, char buffer[], int i)
 {
-	const char hex_map[] = "0123456789ABCDEF";
-	/* The hexadecimal format code is always 2 digits long */
-	if (ascii_code < 0)
-		ascii_code *= -1;
+    const char hex_map[] = "0123456789ABCDEF";
+    /* The hexadecimal format code is always 2 digits long */
+    if (ascii_code < 0)
+        ascii_code *= -1;
 
-	buffer[i++] = '\\';
-	buffer[i++] = 'x';
+    buffer[i++] = '\\';
+    buffer[i++] = 'x';
 
-	buffer[i++] = hex_map[ascii_code / 16];
-	buffer[i] = hex_map[ascii_code % 16];
+    buffer[i++] = hex_map[ascii_code / 16];
+    buffer[i] = hex_map[ascii_code % 16];
 
-	return (3);
+    return (3);
 }
 
 /**
@@ -43,7 +43,7 @@ int append_hexa_code(char ascii_code, char buffer[], int i)
  */
 int is_digit(char c)
 {
-	return (c >= '0' && c <= '9');
+    return (c >= '0' && c <= '9');
 }
 
 /**
@@ -55,15 +55,15 @@ int is_digit(char c)
  */
 long int convert_size_number(long int num, int size)
 {
-	switch (size)
-	{
-		case S_LONG:
-			return (num);
-		case S_SHORT:
-			return ((short)num);
-		default:
-			return ((int)num);
-	}
+    switch (size)
+    {
+    case S_LONG:
+        return (num);
+    case S_SHORT:
+        return ((short)num);
+    default:
+        return ((int)num);
+    }
 }
 
 /**
@@ -75,13 +75,13 @@ long int convert_size_number(long int num, int size)
  */
 unsigned long int convert_size_unsgnd(unsigned long int num, int size)
 {
-	switch (size)
-	{
-		case S_LONG:
-			return (num);
-		case S_SHORT:
-			return ((unsigned short)num);
-		default:
-			return ((unsigned int)num);
-	}
+    switch (size)
+    {
+    case S_LONG:
+        return (num);
+    case S_SHORT:
+        return ((unsigned short)num);
+    default:
+        return ((unsigned int)num);
+    }
 }
